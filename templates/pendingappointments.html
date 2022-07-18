@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pendingappontments</title>
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/pendingappointments.css' %}">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/e41a6e67ca.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- ====================================CODE========================================================= -->
+
+
+
+    <!-- ===============================NAVBAR-START======================================= -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #04fe9e;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/"><i class="fas fa-plus-circle fa-2x"></i></a><span class="health">HEALTH+</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse collapsediv navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navitems">
+                  <li class="nav-item">
+                    <a class="nav-link meet {% block homeactive %} {% endblock homeactive %}" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link meet {% block aboutactive %} {% endblock aboutactive %}" href="/about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link meet {% block contactactive %} {% endblock contactactive %}" href="/contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link meet {% block blogactive %} {% endblock blogactive %}" href="/blog">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- <a class="nav-link colorbtns" href="{% url 'login' %}"><button class="btn btn-primary">Signup / Signin</button></a> -->
+                  </li>
+                
+                </ul>
+
+              </div>
+            </div>
+          </nav>
+
+
+          <!-- ===============================NAVBAR-END======================================= -->
+
+
+
+
+
+          <div class="profilebg">
+                  <div >
+                        <ul class="whitetext">
+                          <li class="whitetextli"><h1>24</h1><h3>Patients</h3></li>
+                          <!-- <li class="whitetextli"><h1>3</h1><h3>Posts</h3></li>
+                          <li class="whitetextli"><h1>2</h1><h3>Following</h3></li> -->
+
+                        </ul>
+                  </div>
+          </div>
+          <div class="profile-line-img">
+            <img src="{{ pf.photo.url }}" alt="" class="profile-pic">
+
+            <div class="row blue">
+              <div class="description">
+              <h1>Dr. {{ pf.first_name }} {{ pf.last_name }}</h1>
+              <h3>{{ pf.bio }}</h3>
+              </div>
+              <div class="btns">
+                  <a href="/editprofile" class="btnsa"><button type="button" name="button" class="btn btn-light btn-outline-primary btn-lg btnlong">Dashboard</button></a>
+                  <a href="/addpost" class="btnsa"><button type="button" name="button" class="btn btn-light btn-outline-primary btn-lg btnlong appointment">Pending Appointments</button></a>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- <div class="containergreen">
+                <h1 class="doctors">DOCTORS</h1>
+                </div> -->
+      <!-- =========================================POSTS====================================== -->
+
+      <div class="row posts">
+
+        <div class="containergreen">
+          <h1 class="doctors">Pending Appointments</h1>
+        </div>
+        {% for appointment in appointments %}
+        <div col-lg-12>
+          <div class="card" style="100%;">
+      <div class="card-body">
+      <h1 class="card-title">{{ appointment.patient.first_name }} {{ appointment.patient.last_name }}</h1>
+      <h6 class="card-subtitle mb-2 text-muted">Heart Patient</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Age: 56 years</h6>
+      <!-- <button type="button" name="button" class="btn btn-primary reports">Reports</button> -->
+      
+      <!-- <p class="card-text"></p> -->
+
+  <button type="submit" name="button" class="btn btn-primary submit">Submit</button>
+  {% if appointment.is_confirmed %}
+  <button type="submit" name="button" class="btn btn-primary btn-lg submit"><i class="fas fa-video"></i>Send Google meet link</button>
+  <form action="{% url 'send_link' %}" method="POST">
+    {% csrf_token %}
+      <input type="number" name="appointment_id" hidden>
+      <input type="text" name="link" placeholder="Link">
+    </form>
+  {% elif appointment.time %}
+  <h6>Waiting for confirmation from patient</h6>
+  {% else %}
+  <h3>Give a date and time for appointment:</h3>
+  <form action="{% url 'fix_time' %}" method="POST">
+    {% csrf_token %}
+      <input type="number" name="appointment_id" hidden>
+      <input type="time" name="time" placeholder="time">
+    </form>
+{% endif %}
+      </div>
+        </div>
+{% endfor %}
+
+
+      </div>
+
+
+   <!-- ===================================CODE-END========================================================= -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+        offset:300,
+        duration: 1000,
+    });
+  </script>
+    <script type="text/javascript" src="profile.js"></script>
+
+  </body>
+</html>

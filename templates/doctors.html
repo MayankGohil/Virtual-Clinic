@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/doctors.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title></title>
+  </head>
+  <body>
+      <div class="containergreen">
+            <h1 class="doctors">DOCTORS</h1>
+            </div>
+<div class="row" data-aos="fade-up">
+{% for doctor in doctors %}
+<div class="col-lg-4 col-md-6 col-sm-12">
+<div class="card">
+<img class="card-img-top" src="{{ doctor.photo.url }}" alt="Card image cap">
+<div class="card-body">
+<h3 class="card-title name">Dr. {{ doctor.first_name }} {{ doctor.last_name }}</h3>
+<h4 class="card-title speciality">{{ doctor.specialization }}</h4>
+<h4 class="card-title experience">Experience: {{ doctor.experience }} years</h4>
+
+<p class="card-text">{{ doctor.bio }}</p>
+<a href="{% url 'book_appointment' doctor.id %}" class="btn btn-primary">Connect</a>
+{% endfor %}
+</div>
+</div>
+</div>
+
+
+
+
+        </div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    offset:300,
+    duration: 1000
+  });
+</script>
+  </body>
+</html>

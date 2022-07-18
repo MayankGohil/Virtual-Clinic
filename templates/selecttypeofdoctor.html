@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/selecttypeofdoctor.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title></title>
+  </head>
+  <body>
+      <div class="containergreen">
+            <h1 class="doctors">SELECT TYPE OF SPECIALIST</h1>
+            </div>
+<div class="row" data-aos="fade-up">
+  
+                  
+
+{% for specialization in specializations %}
+<div class="col-lg-4 col-md-6 col-sm-12">
+  <div class="card">
+<img class="card-img-top" src="{{ specialization.img.url }}" alt="Card image cap">
+<div class="card-body">
+<h3 class="card-title name">{{ specialization.name }}</h3>
+<!-- <h4 class="card-title speciality">Heart Specialist</h4> -->
+<!-- <h4 class="card-title experience">Experience: 5 years</h4> -->
+<a href="{% url 'display_doctors' specialization.name %}" class="btn btn-primary">Select</a>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    offset:300,
+    duration: 1000
+  });
+</script>
+  </body>
+</html>

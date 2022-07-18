@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HackathonProject</title>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'css/home4.css' %}">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/e41a6e67ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- ====================================CODE========================================================= -->
+
+  <!-- =============================================NAVBAR============================================================= -->
+
+  <!-- ===============================NAVBAR-START======================================= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #04fe9e;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fas fa-plus-circle fa-2x"></i></a><span class="health">HEALTH+</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse collapsediv navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 navitems">
+          <li class="nav-item">
+            <a class="nav-link meet {% block homeactive %} {% endblock homeactive %}" aria-current="page"
+              href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link meet {% block aboutactive %} {% endblock aboutactive %}" href="/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link meet {% block contactactive %} {% endblock contactactive %}" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link meet {% block blogactive %} {% endblock blogactive %}" href="/blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link meet" href="/account/logout">Logout</a>
+          </li>
+          <li class="nav-item">
+          
+          </li>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===============================NAVBAR-END======================================= -->
+
+  <!-- ================================NAVBAREND========================================================= -->
+
+  <div class="div1" data-aos="fade-up">
+    <div class="div1in row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <b>
+          <p class="bigfont">Let's</p>
+          <p class="bigfont">Get Healthy!</p>
+        </b>
+        <br>
+        <h5>Get help from in the best doctors </h5>
+        <h5>in the world at your fingertips!</h5> <br>
+        <a name="button" class="btn btn-lg  btn-success signupbtn" href="{% url 'doctor_type' %}">Book Appointment</a>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <img src="{% static 'img/pills.svg' %}" alt="img" class="pillsimg imgdiv1">
+      </div>
+    </div>
+  </div>
+<div class="div2" data-aos="fade-up">
+     <div class="div2in row div1in">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <img src="{% static 'img/doctor-checking.svg' %}" alt="img2" class="imgdiv2">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+
+          <b>  <p class="bigfont">Personal attention</p> <p class="bigfont thodaupar"> with trusted doctors.</p></b>
+          <br>
+          <h5>Doctor Patient relation is very</h5>  <h5>important for a healthy doctor-patient relationship.</h5> <br>
+        </div>
+        <iframe style="overflow: hidden; text-align:centre;" src="https://i.pinimg.com/originals/33/ba/21/33ba21ccda561739ab950d66e5616b82.gif" width="300%" height="600px"></iframe>
+     </div>
+   </div>
+
+
+  <!-- Carousel -->
+<div class="div3" data-aos="fade-up">
+     <div class="div1in row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                <b>  <p class="bigfont">Online appointment and consultancy 24/7</p> <p class="bigfont"></p>and enjoy a healthy life.</b>
+                <br>
+                <h5>Get connected with doctors as per your</h5>  <h5>choice of timing.</h5> <br>
+                <!-- <button type="button" name="button" class="btn btn-lg btn-outline-success btn-light signupbtn">SignUp</button> -->
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <img src="{% static 'img/register.svg' %}" alt="img" class=" imgdiv3">
+                </div>
+     </div>
+   </div>
+
+
+
+
+
+
+  <!-- <div class="div4" data-aos="fade-up">
+    <div class="div1in row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <b>
+          <p class="bigfont">Online appointment and consultancy 24/7</p>
+          <p class="bigfont"></p>and enjoy a healthy life.
+        </b>
+        <br>
+        <h5>Get connected with doctors as per your</h5>
+        <h5>choice of timing.</h5> <br>
+      
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <img src="{% static 'img/register.svg' %}" alt="img" class=" imgdiv3">
+      </div>
+    </div>
+  </div> -->
+  <div class="div5" data-aos="fade-up">
+    <div class="row div1in">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <img src="{% static 'img/lightdoctor.svg' %}" alt="img2" class="imgdiv2">
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+
+        <b>
+          <p class="bigfont">Stay updated with our </p>
+          <p class="bigfont thodaupar">Blogs.</p>
+        </b>
+        <br>
+        <h5>Get in a community and meet new customers</h5>
+        <h5>and expand your business</h5> <br>
+      </div>
+    </div>
+
+    <div class="div5" data-aos="fade-up">
+      <div class="div1in row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <b>
+            <p class="bigfont">Together we</p>
+            <p class="bigfont">become Strong.</p>
+          </b>
+          <br>
+          <h5>Your support means a lot to us</h5>
+          <h5>and keeps us motivated.</h5> <br>
+         
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <img src="{% static 'img/team.svg' %}" alt="img" class="teamimg">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <footer style="text-align:center;">Copyright©</footer> -->
+  <!-- ===========================================BOOTSRAPCAOUSEL================================= -->
+  <!-- <div id="carouselExampleIndicators" class="carousel slide g" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="..." alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+  <!-- ===========================================BOOTSRAPCAOUSEL================================= -->
+
+
+
+  <!-- ===================================CODE-END========================================================= -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script> -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 1000,
+    });
+  </script>
+  <script type="text/javascript" src="index.js"></script>
+  
+
+</body>
+
+</html>

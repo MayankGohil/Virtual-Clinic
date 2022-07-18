@@ -1,0 +1,224 @@
+/*
+background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); blue
+background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); green */
+.containergreen{
+  height: 200px;
+  border-radius: 0 0 100% 100%;
+  width: 100%;
+  background-image: linear-gradient(-45deg,  #04fe9e 0%, #c7eb44 100%)
+}
+
+.doctors{
+  color: white;
+  text-align: center;
+  padding-top: 70px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+
+}
+@media only screen and (max-width: 1100px) {
+  .profile-pic {
+    margin-left: 50%;
+  }
+  .profilebg {
+    height: 300px;
+  }
+  .btns {
+    margin-top: 30px;
+    margin-right: 30%;
+    padding-right: 40%;
+  }
+  .btnlong {
+    /* width: 150px; */
+  }
+  .follow-btn {
+    margin-top: 1px;
+    margin-left: 20px;
+    height: 40px;
+  }
+}
+.profile-line-img {
+background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  padding-bottom: 30px;
+}
+.reports{
+  border-radius: 999px;
+}
+body {
+  width: 100%;
+  margin-left:0%;
+  /* position: relative;
+  left:70px; */
+  /* background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); */
+  /* background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); */
+  /* background-color: #fed0f3;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png"); */
+  /* background-color: #61d4e8;
+background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png"); */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+  /* background-color: #fed0f3;
+ background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png"); */
+  overflow-x: hidden;
+}
+.appointment{
+  /* width: 20%; */
+}
+.profilebg {
+  height: 250px;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  border-bottom: 10px solid black;
+  z-index: 1;
+}
+
+.profile-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 10px solid black;
+  margin-left: 10%;
+  z-index: 2;
+  position: relative;
+  bottom: 110px;
+  background-color: white;
+}
+.whitetext {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-left: 60%;
+  text-align: center;
+  width: 20%;
+}
+.whitetextli {
+  margin: 10%;
+  margin-top: 50px;
+}
+.description {
+  margin-left: 10%;
+  margin-top: -70px;
+  /* background-color: #61d4e8;
+background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png"); */
+}
+.btnsa {
+  color: blue;
+}
+.btnsa:hover {
+  text-decoration: none;
+  color: white;
+}
+.btnlong {
+  border-radius: 999px;
+  /* width: 150px; */
+  margin: 5px;
+}
+.btns {
+  margin-left: 40%;
+}
+
+.posts {
+  /* margin-top: 10px; */
+  border-top: 10px solid;
+  border-color: #cccaca;
+  background-color: #fed0f3;
+  /* background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png"); */
+}
+
+.fa-2x {
+  margin: 10px;
+}
+.fa-2x:hover {
+  cursor: pointer;
+}
+.profile-pic-small {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 2px solid;
+}
+.img-upper-part {
+  display: flex;
+}
+.img-upper-part-text {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.follow-btn {
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 40px;
+}
+.card {
+  width: 60%;
+  margin: 50px auto;
+  border-radius: 5%;
+}
+.cardlikecomment {
+  margin-left: 2%;
+}
+
+.navitems {
+  margin-right: 5%;
+}
+
+/* --------------------------------NAVBAR-START-------------------------- */
+.navbar{
+  /* background-color: #04fe9e; */
+
+}
+.health{
+    /* font-family: "Poppins", sans-serif; */
+    font-weight: bold;
+    font-size: 20px;
+    /* "Helvetica Neue", Helvetica, Arial, sans-serif */
+}
+nav {
+  /* background-image: linear-gradient(-45deg,  #04fe9e 0%, #c7eb44 100%); */
+
+}
+.nav-item {
+  margin-left: 10%;
+  text-align: center;
+  font-weight: bold;
+
+}
+.navitems {
+  margin-right: 5%;
+
+}
+
+.collapsediv {
+  padding-right: 10%;
+}
+.meet {
+  margin-top: 8px;
+  text-align: center;
+}
+.meet:hover {
+  background-color: #c7eb44;
+  transition: 0.5s;
+  /* border-radius: 999px; */
+  /* width: 150%; */
+
+  text-align: center;
+}
+.fa-accusoft {
+  color: #ab0061;
+}
+.colorbtns:hover{
+  background-color:inherit;
+}
+/* --------------------------------NAVBAR-END-------------------------- */
+.submit{
+  margin: 2%;
+  border-radius: 999px;
+}
+.doctorimg{
+  float: right;
+  width: 25%;
+  border-radius: 100%;
+  margin: 5%;
+}

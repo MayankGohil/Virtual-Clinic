@@ -1,0 +1,47 @@
+/* --------------------------------NAVBAR-START-------------------------- */
+* {
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: #04fe9e;
+}
+.health {
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: bold;
+  font-size: 20px;
+  /* "Helvetica Neue", Helvetica, Arial, sans-serif */
+}
+nav {
+  background-image: linear-gradient(-45deg, #04fe9e 0%, #c7eb44 100%);
+}
+.nav-item {
+  margin-left: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+.navitems {
+  margin-right: 5%;
+}
+
+.collapsediv {
+  padding-right: 10%;
+}
+.meet {
+  margin-top: 8px;
+  text-align: center;
+}
+.meet:hover {
+  background-color: #c7eb44;
+  transition: 0.5s;
+  /* border-radius: 999px; */
+  /* width: 150%; */
+
+  text-align: center;
+}
+.fa-accusoft {
+  color: #ab0061;
+}
+.colorbtns:hover {
+  background-color: inherit;
+}
+/* --------------------------------NAVBAR-END-------------------------- */

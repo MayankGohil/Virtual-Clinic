@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/ask.css' %}">
+  </head>
+  <body style="margin:0px;">
+    <div class="containergreen">
+      <h1 class="question">Are you a Doctor or a Patient?</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 doctor">
+        <div class="card">
+<img class="card-img-top" src="{% static 'img/pills.svg' %}" alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">Doctor</h5>
+  <a href="{% url 'register' 'Doctor' %}" class="btn btn-primary">Signin</a>
+</div>
+</div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 patient">
+        <div class="card">
+  <img class="card-img-top" src="{% static 'img/doctor-checking.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Patient</h5>
+    <a href="{% url 'register' 'Patient' %}" class="btn btn-primary">Signin</a>
+  </div>
+</div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

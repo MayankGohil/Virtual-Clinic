@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body{
+  margin:0px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 0px;
+  /* background-color: #d7d7d9; */
+
+}
+.containergreen{
+  height: 200px;
+  border-radius: 0 0 100% 100%;
+  width: 100%;
+  background-image: linear-gradient(-45deg,  #04fe9e 0%, #c7eb44 100%)
+}
+
+.doctors{
+  color: white;
+  text-align: center;
+  padding-top: 70px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+
+}
+.card{
+  margin: 20px auto;
+  width: 70%;
+  border-radius: 10%;
+  box-shadow: 20px 20px 10px grey;
+}
+.speciality{
+
+}
+.experience{
+  color: grey;
+}
+.btn{
+  border-radius: 999px;
+}
